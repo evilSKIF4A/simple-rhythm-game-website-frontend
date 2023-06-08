@@ -4,8 +4,6 @@ import "./css/style.css";
 import useSound from "use-sound";
 import mySound from "./media/music.mp3";
 import { useSelector } from "react-redux";
-import { selectIsAuth } from "../../redux/slices/auth";
-import { Navigate, useNavigate } from "react-router-dom";
 import CoinTable from "../../components/CoinTable/CoinTable";
 import instance from "../../axios";
 
@@ -389,10 +387,6 @@ export default function Game() {
     });
   };
 
-  /**
-   * Allows keys to be only pressed one time. Prevents keydown event
-   * from being handled multiple times while held down.
-   */
   var setupKeys = function () {
     document.addEventListener("keydown", function (event) {
       var keyIndex = getKeyIndex(event.key);
